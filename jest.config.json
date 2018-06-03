@@ -1,0 +1,16 @@
+{
+    "bail": true,
+    "verbose": true,
+    "transform": {
+        "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "tests/.*\\.([tj]sx?)$",
+    "moduleFileExtensions": [
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "node"
+    ]
+}

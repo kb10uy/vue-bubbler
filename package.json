@@ -5,13 +5,17 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config ./jest.config.json"
   },
   "author": "Yuu Kobayashi <kb10uy@kb10uy.org>",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^23.0.0",
     "@types/vue": "^2.0.0",
+    "@vue/test-utils": "^1.0.0-beta.16",
+    "jest": "^23.1.0",
     "prettier": "^1.13.4",
+    "ts-jest": "^22.4.6",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
     "typescript": "^2.9.1"
