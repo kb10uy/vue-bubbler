@@ -2,7 +2,7 @@
   "name": "vue-bubbler",
   "description": "A Vue plugin that enables bubbling of custom events",
   "author": "Yuu Kobayashi <kb10uy@kb10uy.org>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,7 +16,8 @@
   "type": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
-    "test": "jest --config ./jest.config.json"
+    "test": "jest --config ./jest.config.json",
+    "lint": "tslint --project ./"
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",

@@ -13,7 +13,8 @@ export default {
         const oldEmit: Vue['$emit'] = vueConstructor.prototype.$emit;
 
         vueConstructor.prototype.$emit = function(this: Vue, event: string, ...args: any[]) {
-            oldEmit.apply(this, [event, args]);
+            const argArray = [event].concat(args);
+            oldEmit.apply(this, argArray);
 
             const parent = this.$parent;
             if (!parent) {
@@ -21,7 +22,7 @@ export default {
             }
 
             if (!fullOptions.shouldPropagate || fullOptions.shouldPropagate(this, parent, event)) {
-                oldEmit.apply(parent, [event, args]);
+                parent.$emit.apply(parent, argArray);
             }
 
             return this;
@@ -31,6 +32,6 @@ export default {
 
 // tslint:disable-next-line:max-classes-per-file
 // tslint:disable-next-line:no-empty-interface
-interface IBubblerOption {
+export interface IBubblerOption {
     shouldPropagate?: (child: Vue, parent: Vue, event: string, args?: any[]) => boolean;
 }

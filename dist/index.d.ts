@@ -7,6 +7,6 @@ declare const _default: {
  * Vue custom event bubbling plugin
  */
 export default _default;
-interface IBubblerOption {
+export interface IBubblerOption {
     shouldPropagate?: (child: Vue, parent: Vue, event: string, args?: any[]) => boolean;
 }

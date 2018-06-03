@@ -14,13 +14,14 @@ exports.default = {
             for (var _i = 1; _i < arguments.length; _i++) {
                 args[_i - 1] = arguments[_i];
             }
-            oldEmit.apply(this, [event, args]);
+            var argArray = [event].concat(args);
+            oldEmit.apply(this, argArray);
             var parent = this.$parent;
             if (!parent) {
                 return this;
             }
             if (!fullOptions.shouldPropagate || fullOptions.shouldPropagate(this, parent, event)) {
-                oldEmit.apply(parent, [event, args]);
+                parent.$emit.apply(parent, argArray);
             }
             return this;
         };
