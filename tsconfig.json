@@ -3,7 +3,8 @@
         "strict": true,
         "target": "es5",
         "lib": ["es2018", "dom"],
-        "outDir": "./dist"
+        "outDir": "./dist",
+        "declaration": true
     },
     "include": [
         "./src/**/*.ts"
