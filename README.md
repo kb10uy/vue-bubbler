@@ -47,7 +47,7 @@ Vue.use(VueBubbler, {
     },
 
     // When true, vue-bubbler will NOT add new "$bubble" instance method,
-    // instead overrides existing "$on" instance method.
+    // and override existing "$on" instance method.
     override: false,
 });
 ```
