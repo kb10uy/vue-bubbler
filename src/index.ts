@@ -71,4 +71,9 @@ export default {
     },
 };
 
-// TODO: I should export type definition of $bubble, but it seems to be impossible?
+declare module 'vue/types/vue' {
+    // tslint:disable-next-line:interface-name
+    interface Vue {
+        $bubble(event: string, ...args: any[]): Vue;
+    }
+}
