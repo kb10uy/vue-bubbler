@@ -3,10 +3,11 @@
         "strict": true,
         "target": "es5",
         "lib": ["es2018", "dom"],
-        "outDir": "./dist",
+        "outDir": "./",
         "declaration": true
     },
-    "include": [
-        "./src/**/*.ts"
+    "files": [
+        "./src/index.ts",
+        "./src/sealing.ts",
     ]
 }
