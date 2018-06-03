@@ -1,0 +1,22 @@
+{
+  "name": "vue-bubbler",
+  "version": "0.1.0",
+  "description": "This plugin enables event bubbling for Vue custom events.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuu Kobayashi <kb10uy@kb10uy.org>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/vue": "^2.0.0",
+    "prettier": "^1.13.4",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}

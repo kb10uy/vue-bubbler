@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "es5",
+        "lib": ["es2018", "dom"],
+        "outDir": "./dist"
+    },
+    "include": [
+        "./src/**/*.ts"
+    ]
+}
