@@ -8,10 +8,10 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - packages-{{ checksum package.json }}
+            - packages-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
-          key: packages-{{ checksum package.json }}
+          key: packages-{{ checksum "package.json" }}
           paths:
             - node_modules
       - run: npm test
