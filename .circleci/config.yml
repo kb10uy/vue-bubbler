@@ -9,9 +9,9 @@ jobs:
       - restore_cache:
           keys:
             - packages-{{ .Checksum package.json }}
-      - npm install
+      - run: npm install
       - save_cache:
           key: packages-{{ .Checksum package.json }}
           paths:
             - node_modules
-      - npm test
+      - run: npm test
