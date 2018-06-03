@@ -13,7 +13,6 @@
     "event"
   ],
   "main": "dist/index.js",
-  "type": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p ./tsconfig.json",
     "test": "jest --config ./jest.config.json",

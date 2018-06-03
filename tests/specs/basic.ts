@@ -1,24 +1,28 @@
 import { mount, createLocalVue } from '@vue/test-utils';
 import VueBubbler from '../../src';
-import ComponentParent from '../components/parent';
+import Parent from '../components/parent';
+import Grandparent from '../components/grandparent';
 
 const vuePlain = createLocalVue();
 const vuePowered = createLocalVue();
+const vueOverriden = createLocalVue();
 vuePowered.use(VueBubbler);
+vueOverriden.use(VueBubbler, { override: true });
 
 describe('basic event propagation', () => {
-    test('Plain Vue does NOT propagate custom events', () => {
-        const wrapper = mount(ComponentParent, { localVue: vuePlain });
-        const button = wrapper.find('button#grandchild');
-        button.trigger('click');
-
-        expect(wrapper.vm.$data.status).toBe('NG');
-    });
     test('Powered Vue does propagate custom events', () => {
-        const wrapper = mount(ComponentParent, { localVue: vuePowered });
+        const wrapper = mount(Parent, { localVue: vuePowered });
         const button = wrapper.find('button#grandchild');
         button.trigger('click');
 
         expect(wrapper.vm.$data.status).toBe('OK');
+    });
+
+    test('Powered Vue does propagate custom events more than 4 steps', () => {
+        const wrapper = mount(Grandparent, { localVue: vuePowered });
+        const button = wrapper.find('button#grandchild');
+        button.trigger('click');
+
+        expect(wrapper.vm.$data.status).toBe('Ja');
     });
 });

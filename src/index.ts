@@ -56,7 +56,7 @@ export default {
                 return this;
             }
 
-            if (!fullOptions.shouldPropagate || fullOptions.shouldPropagate(this, parent, event)) {
+            if (!fullOptions.shouldPropagate || fullOptions.shouldPropagate(this, parent, event, args)) {
                 bubble.apply(parent, argArray);
             }
 
