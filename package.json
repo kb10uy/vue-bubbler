@@ -5,7 +5,8 @@
   "author": "Yuu Kobayashi <kb10uy@kb10uy.org>",
   "license": "MIT",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/kb10uy/vue-bubbler"
   },
   "main": "dist/index.js",
   "scripts": {
